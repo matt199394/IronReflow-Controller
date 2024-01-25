@@ -1,0 +1,96 @@
+
+(rules PCB ironReflow
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 431)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.5)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 600.0)
+    (clear 350.2)
+    (clear 300.0 (type smd_to_turn_gap))
+    (clear 87.6 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_800:400_um-Power"
+  )
+  (class default
+    "Net-(Brd1-Pad3)" "Net-(Brd1-Pad4)" "unconnected-(IC1-Pad1)" "unconnected-(IC1-Pad2)" "unconnected-(IC1-Pad3)" "unconnected-(IC1-Pad5)" "Net-(IC1-Pad7)" "Net-(IC1-Pad8)"
+    "Net-(IC1-Pad9)" "Net-(IC1-Pad10)" "Net-(IC1-Pad11)" "unconnected-(IC1-Pad12)" "unconnected-(IC1-Pad13)" "unconnected-(IC1-Pad14)" "unconnected-(IC1-Pad15)" "unconnected-(IC1-Pad16)"
+    "Net-(IC1-Pad17)" "unconnected-(IC1-Pad18)" "unconnected-(IC1-Pad19)" "unconnected-(IC1-Pad20)" "unconnected-(IC1-Pad22)" "unconnected-(IC1-Pad24)" "unconnected-(IC1-Pad27)" "unconnected-(IC1-Pad28)"
+    "Net-(IC1-Pad6)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 600.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 600.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    GND +5V +12V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 2000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
