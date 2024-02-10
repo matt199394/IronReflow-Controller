@@ -6,5 +6,6 @@ You have to set some #DEFINE to set the heater time and fine tuning the proper t
 In my case I have use a chaep heating plate and 138°C lead free paste.
 Works very well and I'm pretty ststisfied!
 Thanks to Davide Gatti for the video and code!
+Video demo: https://www.youtube.com/watch?v=i8gFOUQswV8
 ![assembled_pcb](https://github.com/matt199394/IronReflow-Controller/assets/65487240/3f8fa3eb-ccee-4f23-a67b-72a90b637685)
 ![final_result](https://github.com/matt199394/IronReflow-Controller/assets/65487240/e726fc70-bc8a-460b-85ce-dd2e91a9f436)
